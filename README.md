@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Сайт конвертер валют
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+На сайте можно конвертировать одни валюты в другие. Для этого сверху выберите нужную валюты , 
+в одно поле впешите сколько одной валюты нужно конвертировать в другую, 
+и в пративоположном высветится сколько это будет в другой валюте(её так же нужно выбрать сверху).
+На выбор доступно 4 валюты: RUB(рубли), USD(доллары), EUR(евро), GBP(фунт стерлингов).
 
-## Available Scripts
+## Где протестировать сайт?
 
-In the project directory, you can run:
+Для запуска нужно:
+1.Скачать проект.
+2.Открыть консоль и перйти в папку с проектом.
+3.Прописать команду "npm start".
+4.Высветится ссылка "http://localhost:3***". Перейдите по этой ссылке.
 
-### `npm start`
+## Как редактировать сайт?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Все нам нужные файлы лежат в папке src.
+Через файл  запускается сайт и отрисовывается компонента . 
+В файле  находится основная логика и отрисовывается сайт.
+В нем находятся хуки и переменные:
+1. fromCurrency, setFromCurrency отвечает за то ИЗ КАКОЙ валюты мы будем конвертировать(изначальное значение "RUB").
+2. toCurrency, setToCurrency отвечает за то В КАКУЮ валюту мы будем конвертировать(изначальное значение "USD").
+3. rates, setRates массив который хранит в себе "ценность валют"(изначально является пустым масивом).
+4. fromPrice, setFromPrice содержит количество валюты которое мы хотим конвертировать в другое(изначальное значение 0).
+5. toPrice, setToPrice содержит количество валюты которое мы получим при конвертации(изначальное значение 0).
+6. RUB_RATES содержит цену рубля.
+7. 1-ый useEffect заполняет rates ценами валют.
+8. 2-ой useEffect активнее конвертироваться валютам(при переключении 1-ой валюты цена 2-ой мнгновенно меняется).
+В файле Constants.js содержаться названия конвертируемых валют и цена рубля.
+В файле Block.jsx верстается поле для ввода и выбора валюты.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Цель проекта
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Проект создан в образовательных целях учеником школы "Третье место".
